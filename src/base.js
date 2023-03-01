@@ -19,11 +19,15 @@ export const filterEmpty = (target) => {
   }, {});
 };
 
+/**
+ * 对数字进行千位分隔符
+ * @param {string | number} val 
+ * @returns 
+ */
 export const numberWithCommas = (val) => {
   let result;
 
   if (isNumber(val)) return val.toString();
-
 
   if (isNumberDecimal(+val)) {
 
@@ -39,5 +43,5 @@ export const numberWithCommas = (val) => {
  * @description 检测用户代码的运行环境
  */
 export const environment = () => {
-  if (window.navigator && window.history)
+  
 }
