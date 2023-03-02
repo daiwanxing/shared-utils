@@ -10,10 +10,7 @@ export const isString = (val: unknown): val is string => toString(val) === "[obj
 
 export const isNumber = (val: unknown): val is number => toString(val) === "[object Number]";
 
-export const inInteger = (val: any): val is number => {
-  if (Number.isInteger) return Number.isInteger(val);
-  return Math.floor(val) === val;
-}
+export const inInteger = (val: any): val is number => Number.isInteger(val);
 
 export const isNumberDecimal = (val: unknown) => isNumber(val) && /^\d+\.\d+$/.test(val.toString());
 
@@ -44,10 +41,3 @@ export const isEmptyObject = (val: any, travelProto = false) => {
 
   return Object.keys(val).length === 0;
 };
-
-/**
- * 判断用户代理是否为 IE
- * @param {string} userAgent
- * @returns
- */
-export const isIE = (userAgent: string) => /Trident|MSIE/.test(userAgent);

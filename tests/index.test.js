@@ -8,8 +8,9 @@ import {
   isFunction,
   isNumberDecimal,
   isNumber,
-  isIE
 } from "../src/type-guard";
+
+import { isIE } from "../src/broswer";
 
 vi.stubEnv("NODE_ENV", "develop");
 
@@ -79,9 +80,9 @@ describe("test utils", () => {
   });
 
   it("isNumber", ({ expect }) => {
-    expect(isNumber(null)).toBeFalsy();
-    expect(isNumber(1)).toBeTruthy();
-    expect(isNumber(NaN)).toBeFalsy();
+    expect(isNumber(null)).toBe(false);
+    expect(isNumber(1)).toBe(true);
+    expect(isNumber(NaN)).toBe(true);
   });
 });
 

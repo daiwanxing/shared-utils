@@ -5,7 +5,7 @@ import { isObject, isNull, isUndefined, isNumberDecimal, isNumber } from "./type
  * @param {*} target
  * @returns
  */
-export const filterEmpty = (target) => {
+export const filterEmpty = (target: any) => {
   if (!isObject(target))
     throw new Error('expect a normal object such as { name: "foo }');
 
@@ -21,10 +21,8 @@ export const filterEmpty = (target) => {
 
 /**
  * 对数字进行千位分隔符
- * @param {string | number} val 
- * @returns 
  */
-export const numberWithCommas = (val) => {
+export const numberWithCommas = (val: string | number) => {
   let result;
 
   if (isNumber(val)) return val.toString();
