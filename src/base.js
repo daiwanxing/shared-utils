@@ -1,4 +1,4 @@
-import { isObject, isNull, isUndefined, isNumberDecimal, isNumber } from "./guard";
+import { isObject, isNull, isUndefined, isNumberDecimal, isNumber } from "./type-guard";
 
 /**
  * target => { name: "" //del, arr: [], null }

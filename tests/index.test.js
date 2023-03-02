@@ -9,7 +9,7 @@ import {
   isNumberDecimal,
   isNumber,
   isIE
-} from "../src/guard";
+} from "../src/type-guard";
 
 vi.stubEnv("NODE_ENV", "develop");
 

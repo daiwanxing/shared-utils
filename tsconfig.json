@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictPropertyInitialization": true,
+    "types": ["vitest/globals"],
+    "allowJs": false,
+    "lib": ["ES2020", "DOM"],
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules"],
+  "include": ["./**/*.ts"]
+}
