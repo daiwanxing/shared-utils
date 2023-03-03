@@ -1,20 +1,24 @@
 
 /**
- * 返回两个数组中相同的元素
+ * @description 返回两个数组的交集
  */
-export const intersection = function (from: any[], to: any[]) {
-
-    const leftScan = from.filter(item => ~to.indexOf(item)); //[1,2,3]
-
-    const rightScan = to.filter(item => ~from.indexOf(item)); // [2,3]
+export const intersection = function<T> (from: T[], to: T[]) {
+    const leftScan = from.filter(item => ~to.indexOf(item));
+    const rightScan = to.filter(item => ~from.indexOf(item));
 
     return Array.from(new Set(leftScan.concat(rightScan)));
 }
 
-export const unionIntersection = function (from: any[], to: any[]) {
-    return [...new Set(from.concat(to))];
+/**
+ * @description 获取两个数组的并集
+ */
+export const union = function<T>(from: T[], to: T[]) {
+    return [...new Set([...from, ...to])];
 }
 
-export const excludeIntersection = function (from: any[], to: any[]) {
+/**
+ * @description 获取两个数组的差集
+ */
+export const difference = function<T> (from: T[], to: T[]) {
     return from.filter(item => !~to.indexOf(item));
 }
