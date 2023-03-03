@@ -3,12 +3,11 @@ import {
   isUndefined,
   isTruthy,
   isObject,
-  isEmptyObject,
-  isEmptyString,
   isFunction,
-  isNumberDecimal,
   isNumber,
 } from "../src/type-guard";
+
+import { isEmptyObject, isEmptyString, isNumberDecimal } from "../src/is";
 
 import { isIE } from "../src/broswer";
 
@@ -74,9 +73,9 @@ describe("test utils", () => {
   });
 
   it("isNumberDecimal", ({ expect }) => {
-    expect(isNumberDecimal(1312)).toBeFalsy();
-    expect(isNumberDecimal(1312.3123213)).toBeTruthy();
-    expect(isNumberDecimal(null)).toBeFalsy();
+    expect(isNumberDecimal(12321)).toBe(false);
+    expect(isNumberDecimal(1312.3123213)).toBe(true);
+    expect(isNumberDecimal(-1312.3123213)).toBe(true);
   });
 
   it("isNumber", ({ expect }) => {

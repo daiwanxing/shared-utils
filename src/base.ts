@@ -1,4 +1,3 @@
-// import { isObject, isNull, isUndefined, isNumberDecimal, isNumber } from "./type-guard";
 
 /**
  * target => { name: "" //del, arr: [], null }
@@ -22,9 +21,8 @@
 /**
  * 对数字进行千位分隔符
  */
-export const numberWithCommas = (val: number) =>  val.toLocaleString()
+export const numberWithCommas = (val: number) => val.toLocaleString();
 
-
-export function flatTree () {
-  // 
+export function flatTree() {
+  //
 }
