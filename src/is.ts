@@ -25,9 +25,27 @@ export const isEmptyObject = (val: any, travelProto = false) => {
 /**
  * @description 判断 number 是否为小数
  */
-export const isNumberDecimal = (val: number): val is number => /^-?\d+\.\d+$/.test(val.toString());
+export const isNumberDecimal = (val: number): val is number =>
+  /^-?\d+\.\d+$/.test(val.toString());
 
 /**
  * 判断用户代理是否为 IE
  */
 export const isIE = (userAgent: string) => /Trident|MSIE/.test(userAgent);
+
+/**
+ * 判断用户代理是否为 chrome
+ */
+export const isChrome = function (version?: number) {
+  const regex = new RegExp("Chrome/" + (version || "\\d+"));
+  return regex.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+};
+
+
+/**
+ * 判断用户代理是否为 safari
+ */
+export const isSafari = function (version?: number) {
+  const regex = new RegExp(`^((?!chrome|android).)*(Version\/${version || '\\d+'}).*Safari`, 'i');
+  return regex.test(navigator.userAgent);
+}

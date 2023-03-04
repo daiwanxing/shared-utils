@@ -21,7 +21,6 @@ export function filterShallowUndef<T extends Record<string, unknown>>(
 
   return Object.keys(target).reduce((acc, key) => {
     const val = target[key];
-    // 普通类型和基本类型要做区分
     if (!isUndefined(val) && !isNull(val)) {
       acc[key] = target[key];
     }
