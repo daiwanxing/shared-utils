@@ -9,7 +9,7 @@ import {
 
 import { isEmptyObject, isEmptyString, isNumberDecimal } from "../src/is";
 
-import { isIE } from "../src/broswer";
+import { isIE } from "../src/is";
 
 vi.stubEnv("NODE_ENV", "develop");
 

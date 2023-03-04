@@ -1,10 +1,10 @@
-import { isString, isObject } from "./type-guard"
+import { isString, isObject } from "./type-guard";
 
-export const isEmptyString = (val: unknown) => isString(val) && val.trim() === "";
+export const isEmptyString = (val: unknown) =>
+  isString(val) && val.trim() === "";
 
 /**
- * 判断是否为一个空对象 => {}
- * @returns
+ * @description 判断是否为一个空对象 => {}
  */
 export const isEmptyObject = (val: any, travelProto = false) => {
   if (!isObject(val)) throw Error("expect normal object");
@@ -25,4 +25,9 @@ export const isEmptyObject = (val: any, travelProto = false) => {
 /**
  * @description 判断 number 是否为小数
  */
-export const isNumberDecimal = (val: number): val is number =>  /^-?\d+\.\d+$/.test(val.toString());
+export const isNumberDecimal = (val: number): val is number => /^-?\d+\.\d+$/.test(val.toString());
+
+/**
+ * 判断用户代理是否为 IE
+ */
+export const isIE = (userAgent: string) => /Trident|MSIE/.test(userAgent);
