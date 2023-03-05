@@ -5,6 +5,7 @@ import {
   isObject,
   isFunction,
   isNumber,
+  isPrimitiveType
 } from "../src/type-guard";
 
 import { isEmptyObject, isEmptyString, isNumberDecimal } from "../src/is";
@@ -104,3 +105,25 @@ describe("Internet Explorer detection", () => {
     expect(isIE(userAgent)).toBe(false);
   });
 });
+
+describe("test value whethere primitive type", () => {
+  it("test null is a primitive type", ({ expect }) => {
+    expect(isPrimitiveType(null)).toBe(true);
+  })
+  
+  it("test {} not a primitive type", ({ expect }) => {
+    expect(isPrimitiveType({})).toBe(false);
+  })
+
+  it("test undefined is a primitive type", ({ expect }) => {
+    expect(isPrimitiveType(undefined)).toBe(true);
+  })
+
+  it("test function not a primitive type", ({ expect }) => {
+    expect(isPrimitiveType(() => {})).toBe(false);
+  })
+
+  it("test string not a primitive type", ({ expect }) => {
+    expect(isPrimitiveType("string")).toBe(true);
+  })
+})

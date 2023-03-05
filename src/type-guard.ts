@@ -17,3 +17,9 @@ export const isTruthy = (val: any) => Boolean(val);
 export const isNull = (val: any) => val === null;
 
 export const isFunction = (val: unknown): val is Function => toString(val) === "[object Function]";
+
+export const isSymbol = (val: unknown): val is symbol => typeof val === "symbol";
+
+export const isArray = (val: unknown): val is [] => Array.isArray(val);
+
+export const isPrimitiveType = (val: unknown) => isNull(val) || (typeof val !== "object" && typeof val !== "function");
