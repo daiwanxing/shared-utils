@@ -55,10 +55,9 @@ describe("test utils", () => {
 
     expect(isEmptyObject({})).toBeTruthy();
 
-    const normal = {};
-    normal.__proto__.name = "foo";
-    expect(isEmptyObject(normal)).toBeTruthy();
-    expect(isEmptyObject(normal, true)).toBeFalsy();
+    const foo = Object.create({ name: 'foo' });
+    expect(isEmptyObject(foo)).toBeTruthy();
+    expect(isEmptyObject(foo, true)).toBeFalsy();
     expect(isEmptyObject({ foo: "foo" })).toBeFalsy();
   });
 

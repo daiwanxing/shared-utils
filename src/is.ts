@@ -29,7 +29,7 @@ export const isNumberDecimal = (val: number): val is number =>
   /^-?\d+\.\d+$/.test(val.toString());
 
 /**
- * 判断用户代理是否为 IE
+ * @description 判断用户代理是否为 IE
  */
 export const isIE = (userAgent: string) => /Trident|MSIE/.test(userAgent);
 
@@ -43,9 +43,16 @@ export const isChrome = function (version?: number) {
 
 
 /**
- * 判断用户代理是否为 safari
+ * @description 判断用户代理是否为 safari
  */
 export const isSafari = function (version?: number) {
   const regex = new RegExp(`^((?!chrome|android).)*(Version\/${version || '\\d+'}).*Safari`, 'i');
   return regex.test(navigator.userAgent);
+}
+
+/**
+ * @description 判断两个值是否浅相等
+ */
+export const isShallowEqual = function<T extends any, U extends any> (first: T, last: U) {
+  
 }
