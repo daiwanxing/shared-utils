@@ -1,13 +1,9 @@
-import { isObject, isUndefined, isNull } from "./type-guard";
+import { isObject, isUndefined, isNull, isArray } from "./type-guard";
 
 /**
  * 对数字进行千位分隔符
  */
 export const numberWithCommas = (val: number) => val.toLocaleString();
-
-export function flatTree() {
-  //
-}
 
 /**
  * @description 过滤对象上值为空的属性, 空值可以是 `null | undefined`

@@ -24,7 +24,7 @@ describe("suite", () => {
 
 describe("test utils", () => {
   test.skip("isUndefined", ({ expect }) => {
-    expect(isUndefined(undefined)).toBeTruthy(true);
+    expect(isUndefined(undefined)).toBeTruthy();
 
     expect(isUndefined(null)).toBeFalsy();
     expect(isUndefined(1)).toBeFalsy();
