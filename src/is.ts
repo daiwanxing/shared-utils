@@ -1,4 +1,4 @@
-import { isString, isObject } from "./type-guard";
+import { isString, isObject, isArray } from "./type-guard";
 
 export const isEmptyString = (val: unknown) =>
   isString(val) && val.trim() === "";
@@ -21,6 +21,12 @@ export const isEmptyObject = (val: any, travelProto = false) => {
 
   return Object.keys(val).length === 0;
 };
+
+/**
+ * @description 判断是否为一个空数组
+ * @param val 
+ */
+export const isEmptyArray = (val: any) => isArray(val) && !val.length;
 
 /**
  * @description 判断 number 是否为小数
@@ -54,5 +60,5 @@ export const isSafari = function (version?: number) {
  * @description 判断两个值是否浅相等
  */
 export const isShallowEqual = function<T extends any, U extends any> (first: T, last: U) {
-  
+  // TDOO
 }

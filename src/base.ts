@@ -1,4 +1,4 @@
-import { isObject, isUndefined, isNull, isArray } from "./type-guard";
+import { isObject, isUndefined, isNull, } from "./type-guard";
 
 /**
  * 对数字进行千位分隔符
